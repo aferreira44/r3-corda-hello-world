@@ -35,7 +35,6 @@ class IOUContract : Contract {
 
             // Constraints on the signers
             val expectedSigners = listOf(output.borrower.owningKey, output.lender.owningKey)
-            println(command.signers)
 
             "There must be two signers." using (command.signers.toSet().size == 2)
             "The borrower and lender must be signers." using (command.signers.containsAll(expectedSigners))
